@@ -273,17 +273,17 @@ export default function Home() {
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 w-full ${scrolled ? 'bg-[#050505]/80 backdrop-blur-2xl border-b border-white/5 py-3 md:py-4' : 'bg-transparent py-4 md:py-6'}`}>
         <div className="max-w-7xl mx-auto px-5 md:px-6 flex items-center justify-between w-full">
           {/* LOGO */}
-          <div className="text-xl md:text-2xl font-black tracking-tighter text-white flex-shrink-0">
-            BONVENTO<span className="text-[#FF6A00]">.</span>
+          <div className="text-xl items-center justify-center text-center md:text-2xl font-black tracking-tighter text-white flex-shrink-0">
+            MATTEO<span className="text-[#FF6A00]">BONVENTO</span>
           </div>
 
           {/* BOTÃO */}
-          <a href="#planos" className="relative group overflow-hidden bg-transparent border border-[#FF6A00] text-white font-bold text-[10px] md:text-xs tracking-widest uppercase px-4 md:px-6 py-2 md:py-3 rounded-sm backdrop-blur-md flex-shrink-0">
+          {/* <a href="#planos" className="relative group overflow-hidden bg-transparent border border-[#FF6A00] text-white font-bold text-[10px] md:text-xs tracking-widest uppercase px-4 md:px-6 py-2 md:py-3 rounded-sm backdrop-blur-md flex-shrink-0">
             <span className="relative z-10 group-hover:text-black transition-colors duration-300 whitespace-nowrap">
               INICIAR PROJETO
             </span>
             <div className="absolute inset-0 bg-[#FF6A00] transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out z-0" />
-          </a>
+          </a> */}
         </div>
       </nav>
       {/* ── HERO CENTRALIZADO ── */}
