@@ -22,7 +22,6 @@ const IconX = () => (
     <path d="M7 7l6 6M13 7l-6 6" stroke="#666" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
-
 // ── DATA ─────────────────────────────────────────────────────────────────────
 const STATS = [
   { number: '+340%', label: 'aumento médio em conversão' },
