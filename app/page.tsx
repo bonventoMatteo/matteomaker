@@ -270,31 +270,41 @@ export default function Home() {
       <Cursor />
 
       {/* ── NAVBAR ── */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled ? 'bg-[#050505]/80 backdrop-blur-2xl border-b border-white/5 py-3 md:py-4' : 'bg-transparent py-4 md:py-6'}`}>
-        <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between">
-          <div className="text-xl md:text-2xl font-black tracking-tighter text-white">
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 w-full ${scrolled ? 'bg-[#050505]/80 backdrop-blur-2xl border-b border-white/5 py-3 md:py-4' : 'bg-transparent py-4 md:py-6'}`}>
+        <div className="max-w-7xl mx-auto px-5 md:px-6 flex items-center justify-between w-full">
+          {/* LOGO */}
+          <div className="text-xl md:text-2xl font-black tracking-tighter text-white flex-shrink-0">
             BONVENTO<span className="text-[#FF6A00]">.</span>
           </div>
-          <a href="#planos" className="relative group overflow-hidden bg-transparent border border-[#FF6A00] text-white font-bold text-[10px] md:text-xs tracking-widest uppercase px-4 md:px-6 py-2 md:py-3 rounded-sm backdrop-blur-md">
-            <span className="relative z-10 group-hover:text-black transition-colors duration-300">INICIAR PROJETO</span>
+
+          {/* BOTÃO */}
+          <a href="#planos" className="relative group overflow-hidden bg-transparent border border-[#FF6A00] text-white font-bold text-[10px] md:text-xs tracking-widest uppercase px-4 md:px-6 py-2 md:py-3 rounded-sm backdrop-blur-md flex-shrink-0">
+            <span className="relative z-10 group-hover:text-black transition-colors duration-300 whitespace-nowrap">
+              INICIAR PROJETO
+            </span>
             <div className="absolute inset-0 bg-[#FF6A00] transform scale-x-0 origin-left group-hover:scale-x-100 transition-transform duration-500 ease-out z-0" />
           </a>
         </div>
       </nav>
-
       {/* ── HERO CENTRALIZADO ── */}
       <section className="relative min-h-screen flex flex-col justify-center overflow-hidden pt-20 border-b border-white/5 bg-[#020202]">
 
         {/* IMAGEM DE FUNDO SUPER VISÍVEL */}
-        <div className="absolute inset-0 z-0">
+        {/* IMAGEM DE FUNDO SUPER VISÍVEL E ENCAIXADA */}
+        <div className="absolute inset-0 z-0 overflow-hidden">
           <img
             src="/MATTEO.webp"
             alt="Matteo Posicionamento"
-            className="absolute inset-0 h-full w-full object-cover object-[center_top] md:object-center opacity-100"
+            /* O segredo do enquadramento mobile: object-[center_15%] foca no terço superior da foto. 
+               No desktop (md:), volta a centralizar perfeitamente. */
+            className="absolute inset-0 h-full w-full object-cover object-[center_15%] md:object-center opacity-100"
           />
-          {/* Sombras suaves apenas nas bordas (menu e rodapé da seção) */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/60 via-[#050505]/20 to-[#050505]/90 md:via-transparent" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_10%,#050505_100%)] md:bg-[radial-gradient(circle_at_center,transparent_20%,#050505_100%)] opacity-80 md:opacity-60" />
+
+          {/* Sombras inteligentes: Mais forte no topo (menu) e na base (textos) no mobile */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#050505]/90 via-[#050505]/10 to-[#050505] md:via-[#050505]/20 md:to-[#050505]/90" />
+
+          {/* Vinheta radial: formato elíptico no mobile para não engolir a foto nas laterais */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_30%,#050505_100%)] md:bg-[radial-gradient(circle_at_center,transparent_20%,#050505_100%)] opacity-80 md:opacity-60" />
         </div>
 
         {/* BLOBS DE LUZ */}
